@@ -37,7 +37,7 @@ set ruler              			            " Show the cursor position all the time
 set cmdheight=1                         " More space for displaying messages
 set splitbelow                          " Horizontal splits will automatically be below
 set splitright                          " Vertical splits will automatically be to the right
-set cursorline                          " Enable highlighting of the current line
+"set cursorline                          " Enable highlighting of the current line
 "set showtabline=2                       " Always show tabs
 set nobackup                            " This is recommended by coc
 set nowritebackup                       " This is recommended by coc
@@ -103,7 +103,7 @@ inoremap jk <ESC>
 inoremap kj <ESC>
 
 "Fix Y behaviour
-nnoremap Y y$
+nnoremap Y yg$
 
 "Fix indenting visual block
 vmap < <gv
@@ -112,6 +112,11 @@ vmap > >gv
 " Split window
 nnoremap sv <C-w>v
 nnoremap sh <C-w>s
+
+"keeping it centered
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
 
 "NerdTree remapping
 nnoremap <C-n> :NERDTreeToggle<CR>
