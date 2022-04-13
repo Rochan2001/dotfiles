@@ -208,6 +208,9 @@ map <leader>b :Buffers<CR>
 nnoremap <leader>g :Rg<CR>
 nnoremap <leader>t :Tags<CR>
 nnoremap <leader>m :Marks<CR>
+nnoremap <leader>l :Lines<CR>
+nnoremap <leader>bl :BLines<CR>
+nnoremap <leader>h :History:<CR>
 
 
 let g:fzf_tags_command = 'ctags -R'
