@@ -94,6 +94,9 @@ nmap te :tabedit
 nmap <S-h> :tabprev<Return>
 nmap <S-l> :tabnext<Return>
 
+" ; (semicolon) - same as : (colon)
+nmap ; :
+
 "Move lines in visual mode
 vnoremap <silent> <s-J> :m '>+1<CR>gv=gv
 vnoremap <silent> <s-K> :m '<-2<CR>gv=gv
@@ -104,6 +107,9 @@ inoremap kj <ESC>
 
 "Fix Y behaviour
 nnoremap Y yg$
+
+nmap H ^
+nmap L $
 
 "Fix indenting visual block
 vmap < <gv
