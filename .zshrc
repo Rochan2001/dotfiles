@@ -1,6 +1,8 @@
 path+=('/home/rochans/.local/bin')
-path+=('/home/rochans/Apps/nvim-linux64/bin')
+#path+=('/home/rochans/Apps/nvim-linux64/bin')
 path+=('/home/rochans/Apps/idea-IC-221.5787.30/bin')
+
+alias nvim=lvim
 # Enable colors and change prompt:# Enable colors and change prompt:
 export FZF_DEFAULT_OPTS="
 --height 70% 
