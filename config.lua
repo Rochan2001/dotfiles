@@ -11,8 +11,10 @@ an executable
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = true
--- lvim.colorscheme = "onedarker"
+vim.opt.hlsearch = false
+lvim.colorscheme = "gruvbox"
 lvim.builtin.telescope.defaults.layout_config.prompt_position = "top"
+lvim.builtin.telescope.defaults.sorting_strategy = "ascending"
 vim.opt.cmdheight = 1 -- more space in the neovim command line for displaying messages
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
@@ -171,7 +173,5 @@ lvim.builtin.treesitter.highlight.enabled = true
 lvim.plugins = {
   { "ellisonleao/gruvbox.nvim" }
 }
-
-lvim.colorscheme = "gruvbox"
 
 lvim.builtin.lualine.sections.lualine_a = { "mode" }
