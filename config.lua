@@ -175,3 +175,4 @@ lvim.plugins = {
 }
 
 lvim.builtin.lualine.sections.lualine_a = { "mode" }
+lvim.builtin.lualine.sections.lualine_z = { "location" }
