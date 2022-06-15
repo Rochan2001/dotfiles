@@ -12,7 +12,6 @@ an executable
 lvim.log.level = "warn"
 lvim.format_on_save = true
 vim.opt.hlsearch = false
-lvim.colorscheme = "gruvbox"
 lvim.builtin.telescope.defaults.layout_config.prompt_position = "top"
 lvim.builtin.telescope.defaults.sorting_strategy = "ascending"
 vim.opt.cmdheight = 1 -- more space in the neovim command line for displaying messages
@@ -171,8 +170,13 @@ lvim.builtin.treesitter.highlight.enabled = true
 -- })
 
 lvim.plugins = {
-  { "ellisonleao/gruvbox.nvim" }
+  { "morhetz/gruvbox" }
 }
 
+lvim.colorscheme = "gruvbox"
 lvim.builtin.lualine.sections.lualine_a = { "mode" }
 lvim.builtin.lualine.sections.lualine_z = { "location" }
+vim.opt.cursorline = false
+-- vim.opt.number = true -- set numbered lines
+vim.opt.relativenumber = true -- set relative numbered lines
+lvim.builtin.treesitter.highlight = false;
