@@ -22,6 +22,10 @@ vim.opt.cmdheight = 1 -- more space in the neovim command line for displaying me
 lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
+lvim.keys.normal_mode["sv"] = "<C-w>v"
+lvim.keys.normal_mode["sh"] = "<C-w>s"
+lvim.keys.normal_mode["<S-h>"] = ":bp<Return>"
+lvim.keys.normal_mode["<S-l>"] = ":bn<Return>"
 -- unmap a default keymapping
 -- vim.keymap.del("n", "<C-Up>")
 -- override a default keymapping
@@ -31,18 +35,18 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 -- we use protected-mode (pcall) just in case the plugin wasn't loaded yet.
 local _, actions = pcall(require, "telescope.actions")
 lvim.builtin.telescope.defaults.mappings = {
-  -- for input mode
-  i = {
-    ["<C-j>"] = actions.move_selection_next,
-    ["<C-k>"] = actions.move_selection_previous,
-    ["<C-n>"] = actions.cycle_history_next,
-    ["<C-p>"] = actions.cycle_history_prev,
-  },
-  -- for normal mode
-  n = {
-    ["<C-j>"] = actions.move_selection_next,
-    ["<C-k>"] = actions.move_selection_previous,
-  },
+    -- for input mode
+    i = {
+        ["<C-j>"] = actions.move_selection_next,
+        ["<C-k>"] = actions.move_selection_previous,
+        ["<C-n>"] = actions.cycle_history_next,
+        ["<C-p>"] = actions.cycle_history_prev,
+    },
+    -- for normal mode
+    n = {
+        ["<C-j>"] = actions.move_selection_next,
+        ["<C-k>"] = actions.move_selection_previous,
+    },
 }
 
 -- Use which-key to add extra bindings with the leader-key prefix
@@ -68,22 +72,22 @@ lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
-  "bash",
-  "c",
-  "javascript",
-  "json",
-  "lua",
-  "python",
-  "typescript",
-  "tsx",
-  "css",
-  "rust",
-  "java",
-  "yaml",
+    "bash",
+    "c",
+    "javascript",
+    "json",
+    "lua",
+    "python",
+    "typescript",
+    "tsx",
+    "css",
+    "rust",
+    "java",
+    "yaml",
 }
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
-lvim.builtin.treesitter.highlight.enabled = true
+-- lvim.builtin.treesitter.highlight = true
 
 -- generic LSP settings
 
@@ -170,13 +174,27 @@ lvim.builtin.treesitter.highlight.enabled = true
 -- })
 
 lvim.plugins = {
-  { "morhetz/gruvbox" }
+    { "morhetz/gruvbox" },
+    { "windwp/nvim-ts-autotag",
+        config = function()
+            require("nvim-ts-autotag").setup()
+        end,
+    },
+    { "lukas-reineke/indent-blankline.nvim" },
 }
 
 lvim.colorscheme = "gruvbox"
 lvim.builtin.lualine.sections.lualine_a = { "mode" }
 lvim.builtin.lualine.sections.lualine_z = { "location" }
 vim.opt.cursorline = false
+vim.opt.tabstop = 4
 -- vim.opt.number = true -- set numbered lines
 vim.opt.relativenumber = true -- set relative numbered lines
-lvim.builtin.treesitter.highlight = false;
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+vim.opt.smartindent = true
+vim.opt.wrap = false
+
+lvim.builtin.treesitter.autotag.enable = true

@@ -1,6 +1,9 @@
 path+=('/home/rochans/.local/bin')
 path+=('/home/rochans/Apps/nvim-linux64/bin')
-path+=('/home/rochans/Apps/idea-IC-221.5787.30/bin')
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 alias nvim=lvim
 # Enable colors and change prompt:# Enable colors and change prompt:
@@ -91,3 +94,4 @@ source /usr/share/doc/fzf/examples/completion.zsh
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /home/rochans/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
