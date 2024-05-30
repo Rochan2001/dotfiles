@@ -1,13 +1,16 @@
 path+=('/home/rochans/.local/bin')
 path+=('/home/rochans/Apps/nvim-linux64/bin')
 path+=('/home/rochans/Apps/idea-IC-223.7571.182/bin')
+path+=('/usr/local/go/bin')
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 alias idea='/home/rochans/Apps/idea-IC-223.7571.182/bin/idea.sh'
-#alias nvim=lvim
+alias ls='ls --color'
+alias cs='cd ~/Documents/CS/'
+
 # Enable colors and change prompt:# Enable colors and change prompt:
 export FZF_DEFAULT_OPTS="
 --height 70% 
