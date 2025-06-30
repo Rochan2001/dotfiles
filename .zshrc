@@ -1,13 +1,11 @@
-path+=('/home/rochans/.local/bin')
-path+=('/home/rochans/Apps/nvim-linux64/bin')
-path+=('/home/rochans/Apps/idea-IC-223.7571.182/bin')
-path+=('/usr/local/go/bin')
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+path+=('/Users/rochansingh/Apps/nvim-macos-arm64/bin')
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-alias idea='/home/rochans/Apps/idea-IC-223.7571.182/bin/idea.sh'
 alias ls='ls --color'
 alias cs='cd ~/Documents/CS/'
 
@@ -95,8 +93,14 @@ PROMPT+="\$vcs_info_msg_0_ "
 # also ascii escape codes
 #
 # [[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh 
-source /usr/share/doc/fzf/examples/completion.zsh
-source /usr/share/doc/fzf/examples/key-bindings.zsh
-source /home/rochans/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+#
 
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+bindkey "ç" fzf-cd-widget
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

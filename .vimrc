@@ -1,4 +1,6 @@
 set laststatus=2
+set clipboard=unnamed " in osx it is unnamed not unnamedplus
+
 
 "Sane editing
 set tabstop=4
@@ -21,8 +23,6 @@ set hidden
 set noerrorbells
 set nowrap
 set scrolloff=8
-set clipboard=unnamedplus
-set mouse=a
 set background=dark
 set noshowmode
 set nohlsearch
@@ -37,14 +37,15 @@ set cursorline                          " Enable highlighting of the current lin
 call plug#begin()
 
 "File tree
-Plug 'preservim/nerdtree'
 "Theme and statusline
 Plug 'morhetz/gruvbox'
-"Comment code
-Plug 'tpope/vim-commentary'
+Plug 'sainnhe/gruvbox-material'
+
 "Statusline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
+Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
 
@@ -54,7 +55,7 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
-colorscheme gruvbox
+colorscheme gruvbox-material
 
 " let g:airline_powerline_fonts = 1 "enable arrow look
 let g:airline#extensions#whitespace#enabled = 0 "remove trailing white spaces
@@ -92,9 +93,3 @@ nnoremap sh <C-w>s
 nnoremap n nzzzv
 nnoremap N Nzzzv
 nnoremap J mzJ`z
-
-"NerdTree remapping
-nnoremap <C-n> :NERDTreeToggle<CR>
-nnoremap <leader>r :NERDTreeFocus<CR>
-nnoremap <leader>f :NERDTreeFind<CR>
-
